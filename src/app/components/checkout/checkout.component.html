@@ -1,0 +1,43 @@
+<div class="checkout-container">
+  <h2>Pregled plaćanja</h2>
+  
+  <ul>
+    <li *ngFor="let item of cartItems$ | async">
+      <div class="checkout-item">
+        <img [src]="'assets/' + item.product.imageUrl" [alt]="item.product.name">
+        <div class="checkout-item-details">
+          <h3>{{ item.product.name }}</h3>
+          <p>{{ item.product.price | currency:'RSD':'symbol':'1.0-0' }} din</p>
+          <span>Količina: {{ item.quantity }}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  
+  <div class="checkout-total">
+    <h3>Ukupno: {{ total$ | async | currency:'RSD':'symbol':'1.0-0' }} din</h3>
+  </div>
+
+  <div class="shipping">
+    <h3>Izaberite mesto dostave</h3>
+    <label for="country">Država:</label>
+    <select id="country" (change)="onCountryChange($event)" [(ngModel)]="selectedCountry">
+      <option *ngFor="let country of countries$ | async" [value]="country">{{ country }}</option>
+    </select>
+
+    <label for="city">Grad:</label>
+    <select id="city" (change)="onCityChange($event)">
+      <option *ngFor="let city of cities$ | async" [value]="city.name">{{ city.name }} - {{ city.price | currency:'RSD':'symbol':'1.0-0' }} din</option>
+    </select>
+    
+    <div *ngIf="selectedCity">
+      <p *ngIf="selectedCity?.price">Cena dostave: {{ selectedCity.price | currency:'RSD':'symbol':'1.0-0' }} din</p>
+      <p *ngIf="total$ | async as total">Ukupna cena: {{ (total + (selectedCity?.price || 0)) | currency:'RSD':'symbol':'1.0-0' }} din</p>
+    </div>
+    
+    <label for="address">Adresa:</label>
+    <input type="text" id="address" [(ngModel)]="address">
+  </div>
+
+  <button (click)="placeOrder()">Idi na plaćanje</button>
+</div>

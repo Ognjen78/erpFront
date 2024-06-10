@@ -1,0 +1,19 @@
+<section class="section contact">
+    <div class="container">
+      <h2 class="h2 section-title">Kontakt informacije</h2>
+      <div class="contact-info">
+        <p><strong>Telefon:</strong> {{ contactInfo.phone }}</p>
+        <p><strong>Email:</strong> <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></p>
+        <p><strong>Adresa:</strong> {{ contactInfo.address }}</p>
+      </div>
+  
+      <h2 class="h2 section-title">Adrese prodavnica</h2>
+      <ul class="store-list">
+        <li *ngFor="let store of stores">
+          <p><strong>{{ store.city }}</strong></p>
+          <p>{{ store.address }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  

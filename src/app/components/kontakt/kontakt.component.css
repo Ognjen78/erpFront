@@ -1,0 +1,12 @@
+.section.contact {
+    padding: 20px;
+  }
+  
+  .contact-info, .store-list {
+    margin-bottom: 20px;
+  }
+  
+  .store-list li {
+    margin-bottom: 15px;
+  }
+  

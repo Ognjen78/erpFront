@@ -1,0 +1,16 @@
+<div class="login-container">
+    <h2>Prijava</h2>
+    <form (submit)="login()">
+      <label for="username">Korisničko ime:</label>
+      <input id="username" [(ngModel)]="userLogin.username" name="username" required>
+      
+      <label for="password">Šifra:</label>
+      <input id="password" type="password" [(ngModel)]="userLogin.password" name="password" required>
+      
+      <button type="submit">Prijava</button>
+    </form>
+    <p>Nemate nalog? <a href="/register">Registruj se ovde</a></p>
+  </div>
+  
+  
+<router-outlet></router-outlet>

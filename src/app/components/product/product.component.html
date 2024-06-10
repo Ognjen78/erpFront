@@ -1,0 +1,87 @@
+<section class="section product">
+    <div class="container">
+  
+      <h2 class="h2 section-title">PROIZVODI</h2>
+
+   
+
+      <div class="controls">
+        <div class="sort">
+        <label for="sort">Sortiraj po cijeni:</label>
+        <select id="sort" (change)="onSortChange($event)">
+          <option value="asc">Cijena rastuće</option>
+          <option value="desc">Cijena opadajuće</option>
+        </select>
+      </div>
+  
+      <div class="category">
+        <label for="category">Kategorija:</label>
+        <select id="category" (change)="onCategoryChange($event)">
+          <option value="" [selected]="selectedCategory === ''">Sve</option>
+          <option value="Shoes" [selected]="selectedCategory === 'Shoes'">Patike</option>
+          <option value="Tshirt" [selected]="selectedCategory === 'Tshirt'">Majice</option>
+          <option value="Backpack" [selected]="selectedCategory === 'Backpack'">Rancevi</option>
+          <option value="Duks" [selected]="selectedCategory === 'Duks'">Duksevi</option>
+          <option value="Trenerka" [selected]="selectedCategory === 'Trenerka'">Trenerke</option>
+          <option value="Balls" [selected]="selectedCategory === 'Balls'">Lopte</option>
+        </select>
+      </div>
+  
+        <div class="gender">
+        <label for="gender">Pol:</label>
+        <select id="gender" (change)="onGenderChange($event)">
+          <option value="">Sve</option>
+          <option value="M">Muško</option>
+          <option value="F">Žensko</option>
+          <option value="Unisex">Unisex</option>
+        </select>
+      </div>
+
+      <div class="search">
+        <label for="search">Pretraži:</label>
+        <input type="text" id="search" [(ngModel)]="searchTerm" (input)="onSearchChange()">
+      </div>
+      
+      </div>
+      
+
+  
+      <ul class="product-list">
+  
+        <li *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+          <div class="product-card">
+  
+            <figure class="card-banner">
+              <a href="products/{{product.id_product}}">
+                <img src="assets/{{product.imageUrl}}" alt="{{product.name}}" loading="lazy" width="800" height="1034" class="w-100">
+              </a>
+  
+              <div class="card-actions">
+                <button class="card-action-btn" aria-label="Quick view"></button>
+                <button class="card-action-btn cart-btn" (click)="addToCart(product)">
+                  <p>Dodaj u korpu</p>
+                </button>
+                <button class="card-action-btn" aria-label="Add to Wishlist"></button>
+              </div>
+            </figure>
+  
+            <div class="card-content">
+              <h3 class="h4 card-title">
+                <a href="products/{{product.id_product}}">{{product.name}}</a>
+              </h3>
+  
+              <div class="card-price">
+                <data value="">{{product.price | currency:'RSD':'symbol':'1.0-0'}} din</data>
+              </div>
+            </div>
+  
+          </div>
+        </li>
+  
+      </ul>
+  
+      <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+  
+    </div>
+  </section>
+  

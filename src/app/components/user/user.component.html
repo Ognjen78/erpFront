@@ -1,0 +1,27 @@
+<div class="user-profile-container">
+  <h2 class="profile-title">Korisnički Profil</h2>
+  <div *ngIf="user" class="profile-details">
+    <p><strong>Ime:</strong> <span class="profile-info">{{ user.name }}</span></p>
+    <p><strong>Prezime:</strong> <span class="profile-info">{{ user.surname }}</span></p>
+    <p><strong>Email:</strong> <span class="profile-info">{{ user.email }}</span></p>
+    <p><strong>Korisničko ime:</strong> <span class="profile-info">{{ user.username }}</span></p>
+  </div>
+
+  <h3 class="order-history-title">Istorija Narudžbina</h3>
+  <div *ngIf="orders.length > 0; else noOrders">
+    <ul>
+      <li *ngFor="let order of orders">
+        <p>Datum narudžbine : {{ order.order_date| date:'dd/MM/yyyy' }}</p>
+        <p>Cena proizvoda : {{ order.items_price}}</p>
+        <p>Cena dostave : {{ order.shipping_price}}</p>
+        <p>Cena ukupna : {{ order.total_price}}</p>
+        <p>Datum transakcije : {{ order.transaction_date | date:'dd/MM/yyyy'}}</p>
+       
+      </li>
+    </ul>
+  </div>
+  <ng-template #noOrders>
+    <p>Trenutno nema istorije narudžbina.</p>
+  </ng-template>
+
+ 

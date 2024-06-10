@@ -1,0 +1,12 @@
+.section-title {
+    font-size: 2.5em; /* Povećava veličinu fonta */
+    font-weight: bold; /* Podebljava tekst */
+    color: #333; /* Možete prilagoditi boju po želji */
+    text-align: center; /* Centrirano poravnanje */
+    text-transform: uppercase; /* Velika slova */
+    letter-spacing: 2px; /* Razmak između slova */
+    margin: 20px 0; /* Gornji i donji razmak */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Dodaje senku za tekst */
+    padding-bottom: 30px;
+  }
+  

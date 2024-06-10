@@ -1,0 +1,253 @@
+<main>
+    <article>
+
+      <section class="service">
+        <div class="container">
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./assets/del.jpeg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Dostava</p>
+
+                <p class="service-item-text">Dostava na adresu</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./assets/prod.jpeg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Vraćanje proizvoda</p>
+
+                <p class="service-item-text">30 dana za povratak</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./assets/pay.png" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Sigurno plaćanje</p>
+
+                <p class="service-item-text">100% sigurna garancija</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="./assets/sup.png" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Podrška</p>
+
+                <p class="service-item-text">24/7 dostupna podrška</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <section class="hero" id="home" style="background-image: url('./assets/running.jpg');">
+  
+      </section>
+
+
+      <section class="section category">
+        <div class="container">
+
+          <h1 class="h2 section-title">Kategorije</h1>
+
+          <ul class="category-list">
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/tres1.jpg" alt="Trenerke" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Trenerka' }" class="btn btn-secondary">Trenerke</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/duks1.jpg" alt="Duksevi" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Duks' }" class="btn btn-secondary">Duksevi</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/ball1.jpg" alt="Lopte" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Balls' }" class="btn btn-secondary">Lopte</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/adidas.jpeg" alt="Patike" loading="lazy" width="510"
+                  height="600" class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Shoes' }" class="btn btn-secondary">Patike</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/ranac1.jpg" alt="Rancevi" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Backpack' }" class="btn btn-secondary">Rancevi</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="./assets/multishirt.jpg" alt="Majice" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Tshirt' }" class="btn btn-secondary">Majice</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PRODUCT
+      -->
+
+      <section class="section product">
+        <div class="container">
+
+          <h2 class="h2 section-title">Izdvajamo za vas</h2>
+
+          
+          <ul class="product-list">
+
+            <li *ngFor="let product of products | slice:0:4">
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="products/{{product.id_product}}">
+                    <img src="assets/{{product.imageUrl}}" alt="{{product.name}}" loading="lazy" width="800" height="1034" class="w-100">
+                  </a>
+                  
+
+
+                  
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                 
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                
+
+                      <p>Dodaj u korpu</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                    
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">{{product.name}}</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="">{{product.price | currency:'RSD':'symbol':'1.0-0'}} din</data>
+
+          
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            
+          </ul>
+
+          <a href="products">
+          <button class="btn btn-outline">Pogledaj sve proizvode </button>
+        </a>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+  
+
+      <section class="section newsletter">
+        <div class="container">
+
+          <div class="newsletter-card" style="background-image: url('./assets/images/newsletter-bg.png')">
+
+            <h2 class="card-title" style="text-align: center;">Pregled status porudžbine</h2>
+
+            <p class="card-text" style="text-align: center;">
+              Unesite šifru pošiljke i pratite status vaše porudžbine.
+            </p>
+
+            <form action="" class="card-form">
+
+              <div class="input-wrapper">
+     
+
+                <input type="email" name="emal" placeholder="Unesite šifru pošiljke" required class="input-field">
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                <span>Provjeri status</span>
+
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+

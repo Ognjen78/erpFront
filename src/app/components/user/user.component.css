@@ -1,0 +1,82 @@
+.user-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .edit-title {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
+    color: #666;
+  }
+  
+  .profile-details {
+    font-size: 18px;
+  }
+  
+  .profile-details p {
+    margin: 10px 0;
+  }
+  
+  .profile-info {
+    font-weight: normal;
+    color: #555;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .user-profile-container {
+      padding: 15px;
+    }
+  
+    .profile-title, .edit-title {
+      font-size: 20px;
+    }
+  
+    .profile-details, .form-group {
+      font-size: 16px;
+    }
+  }
+  
