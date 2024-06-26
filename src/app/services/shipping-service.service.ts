@@ -15,6 +15,10 @@ export class ShippingServiceService {
     return this.httpClient.get(`${SHIPPING_URL}`);
   }
 
+  public getShippingByID(id: number): Observable<any> {
+    return this.httpClient.get<ShippingAddress>(`${SHIPPING_URL}/${id}`);
+  }
+
   public addShipping(shipping: ShippingAddress): Observable<any> {
     return this.httpClient.post(`${SHIPPING_URL}`, shipping);
   }

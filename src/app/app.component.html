@@ -85,31 +85,31 @@
           <ul class="footer-list">
 
             <li>
-              <p class="footer-list-title">Information</p>
+              <p class="footer-list-title">Informacije</p>
             </li>
 
             <li>
-              <a href="#" class="footer-link">About Company</a>
+              <a href="home" class="footer-link">Pocetna</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Payment Type</a>
+              <a href="contact" class="footer-link">Kontakt</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Awards Winning</a>
+              <a href="products" class="footer-link">Proizvodi</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">World Media Partner</a>
+              <a href="user-profile" class="footer-link">Profil</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Become an Agent</a>
+              <a href="login" class="footer-link">Uloguj se</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Refund Policy</a>
+              <a href="register" class="footer-link">Registruj se</a>
             </li>
 
           </ul>
@@ -117,67 +117,36 @@
           <ul class="footer-list">
 
             <li>
-              <p class="footer-list-title">Category</p>
+              <p class="footer-list-title">Kategorije</p>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Handbags & Wallets</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Trenerka' }" class="footer-link">Trenerke</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Women's Clothing</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Duks' }" class="footer-link">Duksevi</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Plus Sizes</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Balls' }" class="footer-link">Lopte</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Complete Your Look</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Shoes' }"class="footer-link" >Patike</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Baby Corner</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Backpack' }" class="footer-link">Rancevi</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Man & Woman Shoe</a>
+              <a [routerLink]="['/products']" [queryParams]="{ category: 'Tshirt' }" class="footer-link">Majice</a>
             </li>
 
           </ul>
 
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Help & Support</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Dealers & Agents</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">FAQ Information</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Return Policy</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Shipping & Delivery</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Order Tranking</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">List of Shops</a>
-            </li>
-
-          </ul>
-
+          
         </div>
       </div>
 

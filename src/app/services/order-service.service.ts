@@ -15,7 +15,11 @@ export class OrderServiceService {
     return this.httpClient.get(`${ORDER_URL}`);
   }
 
-  public addOrder(order: Order): Observable<any> {
+  public getOrderDate(orderId: string): Observable<any> {
+    return this.httpClient.get(`${ORDER_URL}/${orderId}`);
+  }
+
+  public addOrder(order: any): Observable<any> {
     return this.httpClient.post(`${ORDER_URL}`, order);
   }
 

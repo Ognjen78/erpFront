@@ -162,19 +162,7 @@
 
                   <div class="card-actions">
 
-                    <button class="card-action-btn" aria-label="Quick view">
-                 
-                    </button>
-
-                    <button class="card-action-btn cart-btn">
                 
-
-                      <p>Dodaj u korpu</p>
-                    </button>
-
-                    <button class="card-action-btn" aria-label="Add to Whishlist">
-                    
-                    </button>
 
                   </div>
 
@@ -219,7 +207,7 @@
       <section class="section newsletter">
         <div class="container">
 
-          <div class="newsletter-card" style="background-image: url('./assets/images/newsletter-bg.png')">
+          <div class="newsletter-card">
 
             <h2 class="card-title" style="text-align: center;">Pregled status porudžbine</h2>
 
@@ -227,12 +215,12 @@
               Unesite šifru pošiljke i pratite status vaše porudžbine.
             </p>
 
-            <form action="" class="card-form">
+            <form (ngSubmit)="orderId && checkOrderStatus()" class="card-form">
 
               <div class="input-wrapper">
      
 
-                <input type="email" name="emal" placeholder="Unesite šifru pošiljke" required class="input-field">
+                <input type="email" name="emal" placeholder="Unesite šifru pošiljke" required class="input-field" [(ngModel)]="orderId">
               </div>
 
               <button type="submit" class="btn btn-primary w-100">
@@ -242,6 +230,8 @@
               </button>
 
             </form>
+
+            <div id="orderStatusResult" style="text-align: center; margin-top: 20px;"><p>{{ statusMessage }}</p></div>
 
           </div>
 

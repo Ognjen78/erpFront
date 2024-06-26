@@ -11,6 +11,7 @@
   <div *ngIf="orders.length > 0; else noOrders">
     <ul>
       <li *ngFor="let order of orders">
+        <p>Sifra narudzbine : {{ order.id_order}}</p>
         <p>Datum narudžbine : {{ order.order_date| date:'dd/MM/yyyy' }}</p>
         <p>Cena proizvoda : {{ order.items_price}}</p>
         <p>Cena dostave : {{ order.shipping_price}}</p>

@@ -1,0 +1,57 @@
+.admin-container {
+    padding: 20px;
+  }
+  
+  .admin-container h2 {
+    text-align: center;
+  }
+  
+  section {
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+  
+  input {
+    margin-right: 10px;
+  }
+
+  .admin-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .admin-panel h2 {
+    margin-top: 20px;
+  }

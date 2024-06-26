@@ -1,1 +1,164 @@
-<p>admin works!</p>
+<div class="admin-container">
+    <h2>Admin Panel</h2>
+
+    
+    <section>
+      <h3>Users</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id_user }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.username }}</td>
+            <td>
+              <button (click)="deleteUser(user.id_user)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  
+  
+    <section>
+      <h3>Products</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id_product }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.brand }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <button (click)="editProduct(product)">Edit</button>
+              <button (click)="deleteProduct(product.id_product)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>{{ isEditingProduct ? 'Edit Product' : 'Add New Product' }}</h3>
+  <form (ngSubmit)="saveProduct()">
+    <input [(ngModel)]="newProduct.name" placeholder="Name" name="name">
+    <input [(ngModel)]="newProduct.brand" placeholder="brand" name="brand">
+    <input [(ngModel)]="newProduct.category" placeholder="category" name="category">
+    <input [(ngModel)]="newProduct.description" placeholder="description" name="description">
+    <input [(ngModel)]="newProduct.stock" placeholder="stock" name="stock" type="number">
+    <input [(ngModel)]="newProduct.price" placeholder="price" name="price" type="number">
+    <input [(ngModel)]="newProduct.imageUrl" placeholder="imageUrl" name="imageUrl">
+    <input [(ngModel)]="newProduct.gender" placeholder="gender" name="gender">
+    <button type="submit">{{ isEditingProduct ? 'Update' : 'Add' }}</button>
+  </form>
+    </section>
+  
+    
+    <section>
+      <h3>Orders</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id_order }}</td>
+            <td>{{ order.order_date }}</td>
+            <td>{{ order.total_price }}</td>
+            <td>
+              <button (click)="deleteOrder(order.id_order)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  
+    
+    <section>
+      <h3>Order Items</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Order ID</th>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orderItem of orderItems">
+            <td>{{ orderItem.id_order_items }}</td>
+            <td>{{ orderItem.id_order }}</td>
+            <td>{{ orderItem.id_product }}</td>
+            <td>{{ orderItem.quantity }}</td>
+            <td>{{ orderItem.price }}</td>
+            <td>
+              <button (click)="deleteOrderItem(orderItem.id_order_items)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  
+    
+    <section>
+      <h3>Shipping Addresses</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Shipping Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let address of shippingAddresses">
+            <td>{{ address.id_shipping }}</td>
+            <td>{{ address.country }}</td>
+            <td>{{ address.city }}</td>
+            <td>{{ address.shipping_price }}</td>
+            <td>
+                <button (click)="editShippingAddress(address)">Edit</button>
+              <button (click)="deleteShippingAddress(address.id_shipping)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>{{ isEditingShippingAddress ? 'Edit Shipping Address' : 'Add New Shipping Address' }}</h3>
+      <form (ngSubmit)="saveShippingAddress()">
+        <input [(ngModel)]="newShippingAddress.country" placeholder="Country" name="country">
+        <input [(ngModel)]="newShippingAddress.city" placeholder="City" name="city">
+        <input [(ngModel)]="newShippingAddress.shipping_price" placeholder="Shipping Price" name="shipping_price" type="number">
+        <button type="submit">{{ isEditingShippingAddress ? 'Update' : 'Add' }}</button>
+      </form>
+    </section>
+  </div>
+  

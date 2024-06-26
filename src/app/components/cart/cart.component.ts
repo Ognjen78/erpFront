@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Sada je `cartItems$` već inicijalizovan u konstruktoru
+    
   }
 
   getTotal(cartItems: { product: Product, quantity: number }[]): number {
